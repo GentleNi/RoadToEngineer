@@ -6,24 +6,27 @@ package com.gentleni.thread;
  */
 public class TestInterruptThread {
 
-    public static void main(String[] args) {
-        Thread t  = new Thread(new Runnable() {
+    public static void main(String[] args) throws InterruptedException {
+        final Thread t  = new Thread(new Runnable() {
             public void run() {
-                for (int i = 0; i < 10000 ;i++) {
-                    if (i > 8888) {
-                        try {
-                            Thread.sleep(10000);
-                            Thread.currentThread().interrupt();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
+                while (!Thread.currentThread().isInterrupted()) {
+                    for (int i = 0; i < 10000 ;i++) {
+                        if (i > 8888) {
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                                System.out.println("I 'm interrupt.");
+                                break;
+                            }
                         }
+                        System.out.println(i);
                     }
-                    if (Thread.interrupted())
-                        break;
-                    System.out.println(i);
                 }
             }
         });
         t.start();
+        Thread.sleep(10 * 1000);
+        t.interrupt();
     }
 }
