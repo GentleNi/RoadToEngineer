@@ -1,4 +1,4 @@
-package com.gentleni.datastructure;
+package com.gentleni.datastructure.stack;
 
 /**
  * Created by GentleNi
