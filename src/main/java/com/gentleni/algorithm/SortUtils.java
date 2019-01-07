@@ -1,4 +1,4 @@
-package com.gentleni.datastructure.algorithm;
+package com.gentleni.algorithm;
 
 import java.util.Random;
 

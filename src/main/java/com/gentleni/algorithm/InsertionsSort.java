@@ -1,6 +1,4 @@
-package com.gentleni.datastructure.algorithm;
-
-import java.util.logging.Level;
+package com.gentleni.algorithm;
 
 /**
  * Created by GentleNi
