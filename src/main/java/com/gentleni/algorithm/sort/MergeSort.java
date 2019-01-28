@@ -1,10 +1,14 @@
-package com.gentleni.algorithm;
+package com.gentleni.algorithm.sort;
+
+import java.util.Arrays;
 
 /**
  * Created by GentleNi
  * Date 2018/11/15.
  */
 public class MergeSort {
+
+    static int step = 1;
 
     public static void merge(int[] arr,int l, int m, int r) {
         int n1 = m - l + 1; //size of left arr
@@ -58,11 +62,13 @@ public class MergeSort {
             sort(a,m+1,r);
 
             merge(a,l,m,r);
+            System.out.println("step: " + (step++));
+            System.out.println(Arrays.toString(a));
         }
     }
 
     public static void main(String[] args) {
-        int[] array = SortUtils.createRandomArray(10);
+        int[] array = new int[]{11,8,3,9,7,1,2,5};
         sort(array,0,array.length-1);
         SortUtils.printArray(array);
     }

@@ -1,4 +1,4 @@
-package com.gentleni.algorithm;
+package com.gentleni.algorithm.sort;
 
 /**
  * Created by GentleNi
@@ -18,6 +18,7 @@ public class SelectionSort {
             SortUtils.swap(a,i,minIndex);
         }
     }
+
 
     public static void main(String[] args) {
         int[] array = SortUtils.createRandomArray(10);

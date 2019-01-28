@@ -1,4 +1,4 @@
-package com.gentleni.algorithm;
+package com.gentleni.algorithm.sort;
 
 import java.util.Random;
 
