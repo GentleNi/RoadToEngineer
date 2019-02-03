@@ -1,4 +1,4 @@
-package com.gentleni.io;
+package com.gentleni.io.nio;
 
 import java.io.*;
 import java.net.URI;

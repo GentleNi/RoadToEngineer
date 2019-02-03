@@ -4,7 +4,7 @@ package com.gentleni.jianzhioffer;
  * Created by GentleNi
  * Date 2019/1/4.
  */
-public class demo02 {
+public class Demo02_Duplicate {
 
 
     //1.利用数组做一个hash，时间复杂度o(n),空间复杂度o(n)
@@ -16,6 +16,7 @@ public class demo02 {
             if (a[i] < 0 || a[i] > a.length - 1)
                 return -1;
         }
+
         int[] hashtable = new int[a.length];
         for (int num : a) {
             if (hashtable[num] >= 1) {

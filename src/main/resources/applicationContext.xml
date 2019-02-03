@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--通过反射的方式在IOC容器中创建bean，必须提供无参构造器-->
+    <bean id="helloWord" class="com.gentleni.spring.HelloWord">
+        <property name="name" value="spring"/>
+    </bean>
+
+    <!--通过构造方法配置bean的属性-->
+    <bean id="car"  class="com.gentleni.spring.Car">
+        <constructor-arg value="Audi"/>
+        <constructor-arg value="shanghai"/>
+        <constructor-arg value="300"/>
+    </bean>
+</beans>
