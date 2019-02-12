@@ -1,4 +1,4 @@
-package com.gentleni.io.nio;
+package com.gentleni.io.basicio;
 
 import java.io.*;
 

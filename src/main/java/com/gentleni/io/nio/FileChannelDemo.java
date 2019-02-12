@@ -14,6 +14,7 @@ import java.security.Signature;
  */
 public class FileChannelDemo {
     public static void main(String[] args) throws IOException {
+        //获得文件
         File f = new File("file\\test_file_channel.txt");
         File dir = f.getParentFile();
         if (!dir.exists()) {
@@ -22,7 +23,9 @@ public class FileChannelDemo {
         if (!f.exists()) {
             f.createNewFile();
         }
+        //随机读取文件
         RandomAccessFile aFile = new RandomAccessFile(f, "rw");
+        //获取FileChannel
         FileChannel inChannel = aFile.getChannel();
         long fileSize = inChannel.size();
         System.out.println("file size is " + fileSize);
