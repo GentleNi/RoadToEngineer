@@ -30,28 +30,26 @@ public class Demo02_Duplicate {
 
 
     //2. 根据数字特点排序，会修改原始数据，时间复杂度o(n),空间复杂度o(1)
-    public static int getRepeatedNum2(int[] a) {
-        if (a == null || a.length == 0)
-            return -1;
-        //检查数据条件
-        for (int i = 0; i < a.length-1; i++) {
-            if (a[i] < 0 || a[i] > a.length - 1)
-                return -1;
-        }
-
-        int length = a.length;
-
-        for (int j = 0; j < length-1; j++) {
-            while (a[j] != j) {
-                if (a[j] == a[a[j]])
-                    return a[j];
-                else {
-                    int tmp = a[j];
-                    a[j] = a[a[j]];
-                    a[a[j]] = tmp;
+    public boolean duplicate(int[] nums, int length, int[] duplication) {
+        if (nums == null || length <= 0)
+            return false;
+        for (int i = 0; i < length; i++) {
+            while (nums[i] != i) {//依次对下标进行比较
+                if (nums[i] == nums[nums[i]]) {//如果nums[i] 和 num i 不相等的情况下，并且nums[i] == nums[nums[i]],返回重复
+                    duplication[0] = nums[i];
+                    return true;
                 }
+                swap(nums, i, nums[i]);//否则进行交换
             }
         }
-        return  -1;
+        return false;
     }
+
+    private void swap(int[] nums, int i, int j) {
+        int t = nums[i];
+        nums[i] = nums[j];
+        nums[j] = t;
+    }
+
+
 }

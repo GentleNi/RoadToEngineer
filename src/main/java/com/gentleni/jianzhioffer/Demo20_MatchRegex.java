@@ -25,12 +25,13 @@ public class Demo20_MatchRegex {
 
     public boolean matchCore(char[] str, int sindex, int pindex, char[] pattern){
         // 同时结束
-        if(sindex >= str.length && pindex == pattern.length)
+        if(sindex == str.length && pindex == pattern.length)
             return true;
-        // pattern 先结束
-        if(pindex >= pattern.length && sindex < str.length)
+        //pattern先到尾，匹配失败
+        if (sindex != str.length && pindex == pattern.length) {
             return false;
-        //pattern还没到达倒数第二位,如果下一位是 *
+        }
+        //模式第2个是*，且字符串第1个跟模式第1个匹配,分3种匹配模式；如不匹配，模式后移2位
         if(pindex+1 < pattern.length && pattern[pindex+1] == '*'){
             if(sindex < str.length && (str[sindex] == pattern[pindex] || pattern[pindex] == '.') ){
                 return matchCore(str, sindex, pindex+2, pattern) ||

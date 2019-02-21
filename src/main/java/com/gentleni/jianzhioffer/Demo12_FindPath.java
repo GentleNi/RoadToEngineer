@@ -10,10 +10,10 @@ public class Demo12_FindPath {
 
     public static void main(String[] args) {
         Demo12_FindPath main = new Demo12_FindPath();
-        //main.hasPath()
+        //main.hasPath();
     }
 
-    public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
+    public static boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
         if (matrix.length == 1 && str.length == 1 && matrix[0] == str[0])
             return true;
         char[][] mat = new char[rows][cols];
@@ -25,6 +25,7 @@ public class Demo12_FindPath {
             }
         }
 
+        //从每个点开始一次
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 boolean[][] visited = new boolean[rows][cols];
@@ -37,10 +38,10 @@ public class Demo12_FindPath {
         return false;
     }
 
-    public boolean dfs(char[][] mat, int i, int j, int id, char[] str, boolean[][] visited) {
+    public static boolean dfs(char[][] mat, int i, int j, int id, char[] str, boolean[][] visited) {
         if (i < 0 || j < 0 || i >= mat.length || j >=mat[0].length || id > str.length)
             return false;
-        if (id == str.length)
+        if (id == str.length -1)
             return true;
         if (!visited[i][j] && mat[i][j] == str[id]) {
             visited[i][j] = true;

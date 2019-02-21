@@ -1,18 +1,20 @@
 package com.gentleni.jianzhioffer;
 
+import javafx.scene.chart.BubbleChart;
+
 /**
  * Created by GentleNi
  * Date 2019/2/14.
  */
 public class Demo24_ReverseList {
 
+    //1->2->3
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null)
             return head;
-        ListNode next = head.next;
-        head.next = null;
-        ListNode newHead = reverseList(next);
-        next.next = head;
+        ListNode newHead = reverseList(head.next);
+        head.next.next = head;//head 是 2, head.next是3,3.next = 2
+        head.next = null;//2.next = null，去掉环
         return newHead;
     }
 
@@ -26,4 +28,6 @@ public class Demo24_ReverseList {
         }
         return newList.next;
     }
+
+
 }

@@ -1,5 +1,7 @@
 package com.gentleni.jianzhioffer;
 
+import java.lang.invoke.LambdaConversionException;
+
 /**
  * Created by GentleNi
  * Date 2019/2/17.
@@ -13,9 +15,10 @@ public class Demo33_VerifySquenceOfBST {
 
     }
 
+
     private boolean verify(int[] sequence, int first, int last) {
         //递归退出条件
-        if (last - first <= 1)
+        if (last >= first)
             return true;
         //最后一个数是根节点
         int rootVal = sequence[last];

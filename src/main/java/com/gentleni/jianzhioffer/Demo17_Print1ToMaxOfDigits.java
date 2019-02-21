@@ -5,6 +5,7 @@ package com.gentleni.jianzhioffer;
  * Date 2019/2/11.
  */
 public class Demo17_Print1ToMaxOfDigits {
+
     public void print1ToMaxOfNDigits(int n) {
         if (n <= 0)
             return;

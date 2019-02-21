@@ -1,5 +1,10 @@
 package com.gentleni.jianzhioffer;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
 /**
  * Created by GentleNi
  * Date 2019/2/18.
@@ -37,7 +42,33 @@ public class Demo35_CloneComplexNode {
         }
         return pCloneHead;
     }
+
+
+
+    //使用hashmap
+    public RandomListNode Clone2(RandomListNode pHead)
+    {
+        HashMap<RandomListNode,RandomListNode> map = new HashMap<RandomListNode,RandomListNode>();
+        RandomListNode p = pHead;
+        RandomListNode q = new RandomListNode(-1);
+        while(p!=null){
+            RandomListNode t = new RandomListNode(p.label);
+            map.put(p, t);
+            p = p.next;
+            q.next = t;
+            q = t;
+        }
+        Set<Map.Entry<RandomListNode,RandomListNode>> set = map.entrySet();
+        Iterator<Map.Entry<RandomListNode,RandomListNode>> it = set.iterator();
+        while(it.hasNext()){
+            Map.Entry<RandomListNode, RandomListNode> next = it.next();
+            //next.getKey().random->原链表的random 根据这个key取出的value就是新链表的random
+            next.getValue().random = map.get(next.getKey().random);
+        }
+        return map.get(pHead);
+    }
 }
+
  class RandomListNode {
     int label;
     RandomListNode next = null;

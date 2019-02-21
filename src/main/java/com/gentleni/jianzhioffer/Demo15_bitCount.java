@@ -7,11 +7,18 @@ package com.gentleni.jianzhioffer;
 public class Demo15_bitCount {
 
     public int NumberOf1(int n) {
-        int cnt = 0;
-        while (n != 0) {
-            cnt++;
-            n &= (n - 1);
+        int flag = 1;
+        int count = 0;
+        while (flag != 0) {
+            if ((flag & n) != 0)
+                count++;
+            flag <<= 1;
         }
-        return cnt;
+        return count;
+    }
+
+    public static void main(String[] args) {
+        int a = 9;
+        System.out.println(new Demo15_bitCount().NumberOf1(8));
     }
 }

@@ -21,6 +21,7 @@ public class Demo11_MinNumberInRotateArray {
                 l = m + 1;
         }
         return nums[l];
+
     }
 
     //有重复数字

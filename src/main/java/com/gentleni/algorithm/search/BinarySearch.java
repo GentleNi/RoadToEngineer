@@ -14,7 +14,7 @@ public class BinarySearch {
         int low = 0;
         int high = length-1;
         while (low <= high) {
-            int medium = (low + high) / 2;
+            int medium = low + (high - low) / 2;
             if (target == a[medium]) return true;
             else if (target > a[medium]) {
                 low = medium + 1;

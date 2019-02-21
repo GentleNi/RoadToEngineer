@@ -30,6 +30,7 @@ public class CountingSort {
 
         //  临时数组 r ，存储排序之后的结果
         int[] r = new int[n];
+
         //开始排序
         for (int i = n - 1; i >= 0; --i) {
             int index = c[a[i]] - 1;

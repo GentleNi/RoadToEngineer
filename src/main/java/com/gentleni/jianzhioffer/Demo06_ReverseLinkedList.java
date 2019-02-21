@@ -1,7 +1,9 @@
 package com.gentleni.jianzhioffer;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+import java.util.logging.Level;
 
 /**
  * Created by GentleNi
@@ -45,6 +47,15 @@ public class Demo06_ReverseLinkedList {
         }
     }
 
+    public static ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+        ArrayList<Integer> ret = new ArrayList<>();
+        if (listNode != null) {
+            ret.addAll(printListFromTailToHead(listNode.nxt));
+            ret.add(listNode.val);
+        }
+        return ret;
+    }
+
     /**
      * 使用头插法
      * @param args
@@ -62,7 +73,11 @@ public class Demo06_ReverseLinkedList {
         root.nxt.nxt.nxt.nxt = new ListNode();
         root.nxt.nxt.nxt.nxt.val = 5;
 
-        reverseList2(root);
+        ArrayList<Integer> integers = printListFromTailToHead(root);
+        for (Integer integer: integers) {
+            System.out.println(integer);
+        }
+
     }
 
     }
