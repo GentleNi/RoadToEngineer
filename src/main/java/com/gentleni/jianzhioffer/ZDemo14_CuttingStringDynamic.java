@@ -6,7 +6,7 @@ import java.util.Currency;
  * Created by GentleNi
  * Date 2019/2/11.
  */
-public class Demo14_CuttingStringDynamic {
+public class ZDemo14_CuttingStringDynamic {
     private static int[] memo;
     private static int callCount = 0;
 

@@ -6,7 +6,7 @@ import java.lang.invoke.LambdaConversionException;
  * Created by GentleNi
  * Date 2019/2/17.
  */
-public class Demo33_VerifySquenceOfBST {
+public class ZDemo33_VerifySquenceOfBST {
 
     public boolean VerifySquenceOfBST(int[] sequence) {
         if (sequence == null || sequence.length <= 0)

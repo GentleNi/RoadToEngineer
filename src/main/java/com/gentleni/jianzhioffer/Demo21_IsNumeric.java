@@ -19,6 +19,8 @@ package com.gentleni.jianzhioffer;
  ---------------------
  */
 public class Demo21_IsNumeric {
+
+    //方法1：
     public boolean isNumeric(char[] str) {
     	/*
     	 * 几个关键点：
@@ -91,4 +93,12 @@ public class Demo21_IsNumeric {
         return beginIndex==str.length?true:false;
     }
 
+
+    //方法2：使用java正则匹配
+    public boolean isNumeric2(char[] str) {
+        if (str == null || str.length <= 0)
+            return false;
+        //数字分成三个部分 小数点前，小数点后到科学记数法，科学记数法后
+        return new String(str).matches("[+-]?\\d+(\\.\\d+)?([Ee][+-]?\\d+)?");
+    }
 }

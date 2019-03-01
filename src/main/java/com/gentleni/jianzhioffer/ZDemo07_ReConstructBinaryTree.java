@@ -4,7 +4,7 @@ package com.gentleni.jianzhioffer;
  * Created by GentleNi
  * Date 2019/2/21.
  */
-public class Demo07_ReConstructBinaryTree {
+public class ZDemo07_ReConstructBinaryTree {
 
     public TreeNode reConstructBinaryTree(int [] pre,int [] in) {
         TreeNode root=reConstructBinaryTree(pre,0,pre.length-1,in,0,in.length-1);

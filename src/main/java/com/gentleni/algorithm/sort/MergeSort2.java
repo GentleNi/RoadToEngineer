@@ -21,14 +21,14 @@ public class MergeSort2 {
     }
 
     private static void merge(int[] a, int l, int m, int r) {
-        int n = r - l + 1;
+        int n = a.length;//数组长度
         int[] tmp = new int[n];
 
         int i = l;
         int j = m+1;
-        int k = 0;
+        int k = l;
 
-        while (i < m && j < r){
+        while (i <= m && j <= r){
             if (a[i] <= a[j]) {
                 tmp[k++] = a[i++];
             } else {
@@ -50,9 +50,15 @@ public class MergeSort2 {
         }
 
         // 将tmp中的数组拷贝回a[p...r]
-        for (i = 0; i <= r-l; ++i) {
-            a[l+i] = tmp[i];
+        for (i = l; i <= r; ++i) {
+            a[i] = tmp[i];
         }
 
-        }
+    }
+
+    public static void main(String[] args) {
+        int[] array = new int[]{11,8,3,9,7,1,2,5};
+        mergeSort(array,0,array.length-1);
+        SortUtils.printArray(array);
+    }
 }

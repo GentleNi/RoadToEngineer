@@ -4,7 +4,7 @@ package com.gentleni.jianzhioffer;
  * Created by GentleNi
  * Date 2019/2/11.
  */
-public class Demo13_RobotMovingRange {
+public class ZDemo13_RobotMovingRange {
 
     public int movingCount(int threadhold, int rows, int cols) {
         //检查输入有效性
@@ -45,7 +45,7 @@ public class Demo13_RobotMovingRange {
     }
 
     public static void main(String[] args) {
-        Demo13_RobotMovingRange range = new Demo13_RobotMovingRange();
+        ZDemo13_RobotMovingRange range = new ZDemo13_RobotMovingRange();
         int count = range.movingCount(2,2,2);
         System.out.println(count);
     }

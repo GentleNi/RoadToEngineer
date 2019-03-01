@@ -21,6 +21,8 @@ class QuickSort
      * 4:【1，5，2，8（i）】
      * 5:【1，5，2，7，8(i)】，最后一步再把7换到它应该在的地方，i相当于一个占位符，先占据了7的位置
      */
+    //i就是代表最后pivot的最终位置
+    //i左边就是比pivot小的
     int partition(int arr[], int low, int high)
     {
         int pivot = arr[high];
@@ -39,6 +41,7 @@ class QuickSort
                 arr[j] = temp;
             }
         }
+
 
         // swap arr[i+1] and arr[high] (or pivot)
         int temp = arr[i+1];
@@ -81,7 +84,7 @@ class QuickSort
     // Driver program
     public static void main(String args[])
     {
-        int arr[] = {8,1,5,2,7};
+        int arr[] = {8,1,5,2,7,4,3};
         int n = arr.length;
 
         QuickSort ob = new QuickSort();

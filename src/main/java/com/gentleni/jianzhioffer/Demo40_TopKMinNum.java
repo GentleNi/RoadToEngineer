@@ -9,30 +9,16 @@ import java.util.PriorityQueue;
  * Date 2019/2/20.
  */
 public class Demo40_TopKMinNum {
-    public ArrayList<Integer> GetLeastNumbers_Solution(int[] input, int k) {
-        ArrayList<Integer> result = new ArrayList<Integer>();
-        int length = input.length;
-        if (k > length || k <= 0)
-            return result;
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(k, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o2.compareTo(o1);
-            }
-        });
 
-        for (int i = 0; i < length; i++) {
-            if (maxHeap.size() <= k) {
-                maxHeap.offer(input[i]);
-            } else if (maxHeap.peek() > input[i]) {
-                Integer temp = maxHeap.poll();
-                temp = null;
-                maxHeap.offer(input[i]);
-            }
+    public ArrayList<Integer> GetLeastNumbers_Solution(int[] nums, int k) {
+        if (k > nums.length || k <= 0)
+            return new ArrayList<>();
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> o2 - o1);
+        for (int num : nums) {
+            maxHeap.add(num);
+            if (maxHeap.size() > k)
+                maxHeap.poll();
         }
-        for (Integer integer : maxHeap) {
-            result.add(integer);
-        }
-        return result;
+        return new ArrayList<>(maxHeap);
     }
 }

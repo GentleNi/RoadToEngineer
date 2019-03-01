@@ -16,7 +16,7 @@ public class Demo32_2_PrintFromTopToBottom {
         queue.add(pRoot);
         while (!queue.isEmpty()) {
             ArrayList<Integer> list = new ArrayList<>();
-            int cnt = queue.size();
+            int cnt = queue.size();//也就是每行的数据
             while (cnt-- > 0) {//每个while循环就是一行的数据
                 TreeNode node = queue.poll();
                 if (node == null)

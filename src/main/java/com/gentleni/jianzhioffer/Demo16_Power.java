@@ -13,13 +13,13 @@ public class Demo16_Power {
             return INFINITY;
         if (exponent > 0)
             return unsignedpower(base,exponent);
-        return 1 / unsignedpower(base,Math.abs(exponent));
+        return 1.0 / unsignedpower(base,Math.abs(exponent));
     }
 
     private double unsignedpower(double base, int exponent) {
         if (exponent == 0)
             return 0;
-        if (exponent == 1 || base == 1)
+        if (exponent == 1.0 || base == 1.0)
             return base;
         double power = unsignedpower(base * base,exponent / 2);
         if (exponent % 2 == 1)
@@ -30,5 +30,7 @@ public class Demo16_Power {
     public static void main(String[] args) {
         Demo16_Power power = new Demo16_Power();
         System.out.println(power.power(2,-1));
+        System.out.println(power.power(2,10));
+        System.out.println(power.power(2,9));
     }
 }

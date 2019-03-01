@@ -1,15 +1,13 @@
 package com.gentleni.jianzhioffer;
 
-import java.util.Calendar;
-
 /**
  * Created by GentleNi
  * Date 2019/2/2.
  */
-public class Demo12_FindPath {
+public class ZDemo12_FindPath {
 
     public static void main(String[] args) {
-        Demo12_FindPath main = new Demo12_FindPath();
+        ZDemo12_FindPath main = new ZDemo12_FindPath();
         //main.hasPath();
     }
 

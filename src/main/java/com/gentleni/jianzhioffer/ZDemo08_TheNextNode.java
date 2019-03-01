@@ -4,7 +4,7 @@ package com.gentleni.jianzhioffer;
  * Created by GentleNi
  * Date 2019/1/31.
  */
-public class Demo08_TheNextNode {
+public class ZDemo08_TheNextNode {
      class TreeLinkNode {
 
         int val;

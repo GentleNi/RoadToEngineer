@@ -6,6 +6,7 @@ package com.gentleni.jianzhioffer;
  */
 public class Demo26_HasSubtree {
 
+
     public static boolean HasSubtree(TreeNode root1, TreeNode root2) {
         boolean result = false;
         //当Tree1和Tree2都不为零的时候，才进行比较。否则直接返回false
