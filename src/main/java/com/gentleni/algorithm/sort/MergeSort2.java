@@ -26,7 +26,7 @@ public class MergeSort2 {
 
         int i = l;
         int j = m+1;
-        int k = l;
+        int k = 0;
 
         while (i <= m && j <= r){
             if (a[i] <= a[j]) {
@@ -39,7 +39,7 @@ public class MergeSort2 {
         //判断哪个部分有剩余,先默认左部分有剩余
         int start = i;
         int end = m;
-        if (i == m) { //则右边有剩余
+        if (i > m) { //则右边有剩余
             start = j;
             end = r;
         }
@@ -50,8 +50,8 @@ public class MergeSort2 {
         }
 
         // 将tmp中的数组拷贝回a[p...r]
-        for (i = l; i <= r; ++i) {
-            a[i] = tmp[i];
+        for (i = 0; i < k; ++i) {
+            a[l + i] = tmp[i];
         }
 
     }
