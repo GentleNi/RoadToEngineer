@@ -27,6 +27,7 @@ public class Demo41_1_MediumNum {
         }
         N++;
     }
+
     public Double GetMedian() {
         if (N % 2 == 0)
             return (left.peek() + right.peek()) / 2.0;
