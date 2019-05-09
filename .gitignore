@@ -10,8 +10,8 @@ gen
 file/
 target/
 
-src/main/java/com/gentleni/jvm/Jvm$OomPbject.class
-src/main/java/com/gentleni/jvm/Jvm.class
-src/main/java/com/gentleni/spring/aop/
+JavaBasic/src/main/java/com/gentleni/jvm/Jvm$OomPbject.class
+JavaBasic/src/main/java/com/gentleni/jvm/Jvm.class
+Framework/src/main/java/com/gentleni/spring/aop/
 src/test/java/com/
-src/main/java/com/gentleni/a_demo/*
+Framework/src/main/java/com/gentleni/a_demo/*
