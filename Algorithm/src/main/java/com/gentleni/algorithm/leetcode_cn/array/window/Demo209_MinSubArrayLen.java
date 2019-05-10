@@ -1,4 +1,4 @@
-package com.gentleni.algorithm.leetcode_cn.array;
+package com.gentleni.algorithm.leetcode_cn.array.window;
 
 import sun.print.SunMinMaxPage;
 
